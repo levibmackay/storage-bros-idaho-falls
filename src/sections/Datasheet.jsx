@@ -4,13 +4,31 @@ import { UNITS } from "../data";
 
 export default function Datasheet() {
   return (
-    <section id="datasheet" className="border-t border-concrete-300/15 bg-charcoal-900">
+    <section id="datasheet" className="scroll-mt-20 bg-charcoal-900 sm:scroll-mt-24">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
         <Reveal>
           <SectionHeading index="01" title="Unit Datasheet" note="Idaho Falls · 2268 E Iona Rd" />
         </Reveal>
 
-        <Reveal delay={0.05} className="overflow-x-auto">
+        {/* Below sm: stacked cards so nothing scrolls horizontally on narrow screens. */}
+        <div className="flex flex-col gap-3 sm:hidden">
+          {UNITS.map((unit, i) => (
+            <Reveal
+              key={unit.size}
+              delay={Math.min(i, 4) * 0.03}
+              className="border border-concrete-300/20 p-4"
+            >
+              <div className="flex items-baseline justify-between gap-3">
+                <span className="font-mono text-xl text-paper">{unit.size}</span>
+                <span className="font-mono text-xl text-amber">{unit.price}</span>
+              </div>
+              <p className="mt-2 text-sm text-concrete-300">{unit.fits}</p>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* sm and up: full datasheet table, scrolls only within its own container. */}
+        <Reveal delay={0.05} className="hidden overflow-x-auto sm:block">
           <table className="w-full min-w-[560px] border-collapse text-left">
             <thead>
               <tr className="border-b border-concrete-300/25 text-xs uppercase tracking-[0.15em] text-concrete-500">

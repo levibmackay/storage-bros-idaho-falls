@@ -1,11 +1,12 @@
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
+import CornerMarks from "../components/CornerMarks";
 import facility2 from "../assets/photos/facility-2.jpeg";
 import { GATE_HOURS, OFFICE_HOURS } from "../data";
 
 export default function Access() {
   return (
-    <section className="border-t border-concrete-300/15 bg-charcoal-900">
+    <section id="access" className="scroll-mt-20 bg-charcoal-900 sm:scroll-mt-24">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
         <Reveal>
           <SectionHeading index="03" title="Access &amp; Hours" />
@@ -46,6 +47,7 @@ export default function Access() {
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950/60 via-transparent to-transparent" />
+            <CornerMarks />
           </Reveal>
         </div>
       </div>

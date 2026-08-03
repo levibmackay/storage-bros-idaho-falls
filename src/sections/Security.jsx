@@ -4,7 +4,7 @@ import { SECURITY_SPECS } from "../data";
 
 export default function Security() {
   return (
-    <section className="border-t border-concrete-300/15">
+    <section id="security" className="scroll-mt-20 sm:scroll-mt-24">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
         <Reveal>
           <SectionHeading index="02" title="Security &amp; Access Specs" note="Verified on site" />
