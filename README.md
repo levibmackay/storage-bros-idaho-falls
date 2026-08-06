@@ -34,4 +34,3 @@ Deploys automatically to GitHub Pages on push to `main` via the workflow in
 `.github/workflows/deploy.yml`.
 
 **Last updated:** 2026-08-06 07:59 PDT
-
